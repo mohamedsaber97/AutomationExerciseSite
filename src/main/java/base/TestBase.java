@@ -41,6 +41,6 @@ public class TestBase {
         actions = new Actions(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        properties.getProperty("url");
+        driver.get(properties.getProperty("url"));
     }
 }
