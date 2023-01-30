@@ -1,9 +1,6 @@
 package testCases.authTestCases;
 
 import base.TestBase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,10 +18,7 @@ public class RegisterTest extends TestBase {
     @BeforeMethod
     public void openSiteAndVerifyHome() {
         initialization(properties.getProperty("browser"));
-        WebElement homeLogo = driver.findElement(By.xpath("//*[@alt = 'Website for automation practice']"));
-        boolean actualLogo = homeLogo.isDisplayed();
-        Assert.assertTrue(actualLogo, "-----the home logo is invisible-----");
-        System.out.println("----home logo is visible-----");
+        registerPage.checkLogo();
     }
 
     @AfterMethod
@@ -34,7 +28,6 @@ public class RegisterTest extends TestBase {
 
     @Test
     public void registerUserTC() {
-        WebElement btn = driver.findElement(By.xpath("//*[@href = '/login']"));
-        btn.click();
+        registerPage.registerTestCase();
     }
 }

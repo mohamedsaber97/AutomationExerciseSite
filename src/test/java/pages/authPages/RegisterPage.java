@@ -1,9 +1,8 @@
 package pages.authPages;
 
 import base.TestBase;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.io.IOException;
@@ -11,23 +10,21 @@ import java.io.IOException;
 public class RegisterPage extends TestBase {
 
     public RegisterPage() throws IOException {
-        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@alt = 'Website for automation practice']")
-    WebElement homeLogo;
-
-    @FindBy(xpath = "//*[@href = '/login']")
-    WebElement signupLoginBtn;
-
+    By homeLogo = By.xpath("//*[@alt = 'Website for automation practice']");
+    By singUpLoginBtn = By.xpath("//*[@href = '/login']");
 
     public void checkLogo() {
-        boolean actualLogo = homeLogo.isDisplayed();
+        WebElement logo = driver.findElement(homeLogo);
+        boolean actualLogo = logo.isDisplayed();
         Assert.assertTrue(actualLogo, "-----the home logo is invisible-----");
         System.out.println("----home logo is visible-----");
     }
 
     public void registerTestCase() {
-        signupLoginBtn.click();
+        WebElement singUpLogin = driver.findElement(singUpLoginBtn);
+        singUpLogin.click();
     }
+
 }
