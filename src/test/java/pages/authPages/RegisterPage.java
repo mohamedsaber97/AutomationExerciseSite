@@ -50,11 +50,14 @@ public class RegisterPage extends TestBase {
     By accountCreatedLbl = By.xpath("//b[contains(text(),'Account Created!')]");
     By continueCreatedBtn = By.linkText("Continue");
 
-    //delete account cycle
+    //delete account cycle elements
     By loggedInLbl = By.xpath("//a[contains(text(),'Logged in as')]");
     By deleteBtn = By.xpath("//a[contains(text(),'Delete Account')]");
     By accountDeletedLbl = By.xpath("//b[contains(text(),'Account Deleted!')]");
     By continueDeletedBtn = By.linkText("Continue");
+
+    //duplicate email elements
+    By duplicateEmailLbl = By.xpath("//*[text() = 'Email Address already exist!']");
 
     //method to check if that home is opened
     public void checkLogo() {
@@ -66,27 +69,39 @@ public class RegisterPage extends TestBase {
 
     //method to submit register with new user
     public void registerNewUser() {
-        WebElement singUpLoginBtnElement = driver.findElement(singUpLoginBtn);
-        singUpLoginBtnElement.click();
-        validSignUpForm();
+        signUpForm();
         accountInfoForm();
         verifyAndContinueCreatedAccount();
         deleteAccountCycle();
     }
 
+    public void registerDuplicateUser() {
+        signUpForm();
+
+        //check if duplicate email alert is visible
+        WebElement duplicateEmailElement = driver.findElement(duplicateEmailLbl);
+        boolean actualDuplicateLbl = duplicateEmailElement.isDisplayed();
+        Assert.assertTrue(actualDuplicateLbl, "-----the Email Address already exist! is invisible-----");
+        System.out.println("----the Email Address already exist! is visible-----");
+    }
+
     //method to submit valid signup form
-    public void validSignUpForm() {
+    public void signUpForm() {
+        //click on signup/login button
+        WebElement singUpLoginBtnElement = driver.findElement(singUpLoginBtn);
+        singUpLoginBtnElement.click();
+
         //check that signup is opened
         WebElement newUserElement = driver.findElement(newUserLbl);
         boolean actualLbl = newUserElement.isDisplayed();
         Assert.assertTrue(actualLbl, "-----the New User Signup! is invisible-----");
         System.out.println("----the New User Signup! is visible-----");
 
-        //send valid data
+        //send data
         WebElement nameElement = driver.findElement(nameTxt);
-        nameElement.sendKeys("saber user");
+        nameElement.sendKeys(properties.getProperty("name"));
         WebElement emailElement = driver.findElement(emailTxt);
-        emailElement.sendKeys("user@gmail.com");
+        emailElement.sendKeys(properties.getProperty("email"));
         WebElement signUpElement = driver.findElement(signUbBtn);
         signUpElement.click();
     }

@@ -28,9 +28,15 @@ public class RegisterTest extends TestBase {
         System.out.println("-----after method is finished-----");
     }
 
-    @Test
+    @Test(priority = 1)
     public void registerNewUserTC() {
         registerPage.registerNewUser();
         System.out.println("-----register new user testcase is finished-----");
+    }
+
+    @Test(priority = 2)
+    public void registerDuplicateUserTC() {
+        registerPage.registerDuplicateUser();
+        System.out.println("-----register duplicate user testcase is finished-----");
     }
 }
