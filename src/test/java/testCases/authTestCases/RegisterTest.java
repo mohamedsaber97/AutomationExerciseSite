@@ -19,15 +19,18 @@ public class RegisterTest extends TestBase {
     public void openSiteAndVerifyHome() {
         initialization(properties.getProperty("browser"));
         registerPage.checkLogo();
+        System.out.println("-----before method is finished-----");
     }
 
     @AfterMethod
     public void afterEachMethod() {
         driver.quit();
+        System.out.println("-----after method is finished-----");
     }
 
     @Test
-    public void registerUserTC() {
-        registerPage.registerTestCase();
+    public void registerNewUserTC() {
+        registerPage.registerNewUser();
+        System.out.println("-----register new user testcase is finished-----");
     }
 }
