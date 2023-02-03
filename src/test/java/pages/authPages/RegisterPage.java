@@ -1,6 +1,6 @@
 package pages.authPages;
 
-import base.TestBase;
+import base.ProjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -10,14 +10,10 @@ import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
-public class RegisterPage extends TestBase {
+public class RegisterPage extends ProjectBase {
 
     public RegisterPage() throws IOException {
     }
-
-    //main elements
-    By homeLogoImg = By.xpath("//*[@alt = 'Website for automation practice']");
-    By singUpLoginBtn = By.xpath("//*[@href = '/login']");
 
     //signup elements
     By newUserLbl = By.xpath("//*[text() = 'New User Signup!']");
@@ -59,14 +55,6 @@ public class RegisterPage extends TestBase {
     //duplicate email elements
     By duplicateEmailLbl = By.xpath("//*[text() = 'Email Address already exist!']");
 
-    //method to check if that home is opened
-    public void checkLogo() {
-        WebElement homeLogoElement = driver.findElement(homeLogoImg);
-        boolean actualLogo = homeLogoElement.isDisplayed();
-        Assert.assertTrue(actualLogo, "-----the home logo is invisible-----");
-        System.out.println("----the home logo is visible-----");
-    }
-
     //method to submit register with new user
     public void registerNewUser() {
         signUpForm();
@@ -87,10 +75,6 @@ public class RegisterPage extends TestBase {
 
     //method to submit valid signup form
     public void signUpForm() {
-        //click on signup/login button
-        WebElement singUpLoginBtnElement = driver.findElement(singUpLoginBtn);
-        singUpLoginBtnElement.click();
-
         //check that signup is opened
         WebElement newUserElement = driver.findElement(newUserLbl);
         boolean actualLbl = newUserElement.isDisplayed();

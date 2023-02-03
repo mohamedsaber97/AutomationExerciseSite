@@ -12,15 +12,15 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class TestBase {
+public class ProjectBase {
 
     public static WebDriver driver;
     public static Actions actions;
     public static Properties properties;
 
-    public TestBase() throws IOException {
+    public ProjectBase() throws IOException {
         properties = new Properties();
-        FileInputStream configFile = new FileInputStream("src/main/java/base/TestConfig");
+        FileInputStream configFile = new FileInputStream("src/main/java/base/ProjectConfig");
         properties.load(configFile);
     }
 

@@ -2,23 +2,23 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-31T15:22:11 EET" name="Authentication" finished-at="2023-01-31T15:22:36 EET" duration-ms="25135">
+  <suite started-at="2023-02-03T22:21:31 EET" name="Authentication" finished-at="2023-02-03T22:21:59 EET" duration-ms="27616">
     <groups>
     </groups>
-    <test started-at="2023-01-31T15:22:11 EET" name="Smoke Test" finished-at="2023-01-31T15:22:36 EET" duration-ms="25135">
+    <test started-at="2023-02-03T22:21:31 EET" name="Smoke Test" finished-at="2023-02-03T22:21:59 EET" duration-ms="27616">
       <class name="testCases.authTestCases.RegisterTest">
-        <test-method is-config="true" signature="openSiteAndVerifyHome()[pri:0, instance:testCases.authTestCases.RegisterTest@625732]" started-at="2023-01-31T15:22:11 EET" name="openSiteAndVerifyHome" finished-at="2023-01-31T15:22:18 EET" duration-ms="7151" status="PASS">
+        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:31 EET" name="beforeEachRegisterTC" finished-at="2023-02-03T22:21:42 EET" duration-ms="10851" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openSiteAndVerifyHome -->
-        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@625732]" started-at="2023-01-31T15:22:18 EET" name="registerNewUserTC" finished-at="2023-01-31T15:22:36 EET" duration-ms="17713" status="PASS">
+        </test-method> <!-- beforeEachRegisterTC -->
+        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:42 EET" name="registerNewUserTC" finished-at="2023-02-03T22:21:59 EET" duration-ms="16410" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerNewUserTC -->
-        <test-method is-config="true" signature="afterEachMethod()[pri:0, instance:testCases.authTestCases.RegisterTest@625732]" started-at="2023-01-31T15:22:36 EET" name="afterEachMethod" finished-at="2023-01-31T15:22:36 EET" duration-ms="238" status="PASS">
+        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:59 EET" name="afterEachRegisterTC" finished-at="2023-02-03T22:21:59 EET" duration-ms="312" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterEachMethod -->
+        </test-method> <!-- afterEachRegisterTC -->
       </class> <!-- testCases.authTestCases.RegisterTest -->
     </test> <!-- Smoke Test -->
   </suite> <!-- Authentication -->
