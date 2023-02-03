@@ -73,7 +73,7 @@ public class RegisterPage extends ProjectBase {
         System.out.println("----the Email Address already exist! is visible-----");
     }
 
-    //method to submit valid signup form
+    //method to submit signup form
     public void signUpForm() {
         //check that signup is opened
         WebElement newUserElement = driver.findElement(newUserLbl);
@@ -83,9 +83,9 @@ public class RegisterPage extends ProjectBase {
 
         //send data
         WebElement nameElement = driver.findElement(nameTxt);
-        nameElement.sendKeys(properties.getProperty("name"));
+        nameElement.sendKeys(properties.getProperty("newName"));
         WebElement emailElement = driver.findElement(emailTxt);
-        emailElement.sendKeys(properties.getProperty("email"));
+        emailElement.sendKeys(properties.getProperty("newEmail"));
         WebElement signUpElement = driver.findElement(signUbBtn);
         signUpElement.click();
     }

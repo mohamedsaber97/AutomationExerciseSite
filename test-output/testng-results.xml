@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-03T22:21:31 EET" name="Authentication" finished-at="2023-02-03T22:21:59 EET" duration-ms="27616">
+  <suite started-at="2023-02-03T23:11:36 EET" name="Authentication" finished-at="2023-02-03T23:15:55 EET" duration-ms="259125">
     <groups>
     </groups>
-    <test started-at="2023-02-03T22:21:31 EET" name="Smoke Test" finished-at="2023-02-03T22:21:59 EET" duration-ms="27616">
+    <test started-at="2023-02-03T23:11:36 EET" name="Smoke Test" finished-at="2023-02-03T23:15:55 EET" duration-ms="259125">
+      <class name="testCases.authTestCases.LoginTest">
+        <test-method is-config="true" signature="beforeEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:14:02 EET" name="beforeEachLoginTC" finished-at="2023-02-03T23:15:12 EET" duration-ms="69504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachLoginTC -->
+        <test-method signature="invalidLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:15:12 EET" name="invalidLoginTC" finished-at="2023-02-03T23:15:54 EET" duration-ms="42510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLoginTC -->
+        <test-method is-config="true" signature="afterEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:15:54 EET" name="afterEachLoginTC" finished-at="2023-02-03T23:15:55 EET" duration-ms="252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachLoginTC -->
+      </class> <!-- testCases.authTestCases.LoginTest -->
       <class name="testCases.authTestCases.RegisterTest">
-        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:31 EET" name="beforeEachRegisterTC" finished-at="2023-02-03T22:21:42 EET" duration-ms="10851" status="PASS">
+        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:11:36 EET" name="beforeEachRegisterTC" finished-at="2023-02-03T23:13:08 EET" duration-ms="92018" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachRegisterTC -->
-        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:42 EET" name="registerNewUserTC" finished-at="2023-02-03T22:21:59 EET" duration-ms="16410" status="PASS">
+        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:13:08 EET" name="registerNewUserTC" finished-at="2023-02-03T23:14:02 EET" duration-ms="54461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerNewUserTC -->
-        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@120f102b]" started-at="2023-02-03T22:21:59 EET" name="afterEachRegisterTC" finished-at="2023-02-03T22:21:59 EET" duration-ms="312" status="PASS">
+        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:14:02 EET" name="afterEachRegisterTC" finished-at="2023-02-03T23:14:02 EET" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachRegisterTC -->
