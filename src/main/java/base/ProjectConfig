@@ -1,6 +1,6 @@
 url = https://automationexercise.com/
 browser = edge
-newName = mohamed test
-newEmail = motest@gmail.com
+registeredName = test1
+registeredEmail = test1@gmail.com
 loginEmail = testsab@gmail.com
 loginPassword = 123456

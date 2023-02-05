@@ -6,12 +6,12 @@
             <class name="testCases.authTestCases.RegisterTest">
                 <methods>
                     <include name="registerNewUserTC"/>
-                    <exclude name="registerDuplicateUserTC"/>
+                    <include name="registerDuplicateUserTC"/>
                 </methods>
             </class>
             <class name="testCases.authTestCases.LoginTest">
                 <methods>
-                    <exclude name="validLoginTC"/>
+                    <include name="validLoginTC"/>
                     <include name="invalidLoginTC"/>
                 </methods>
             </class>

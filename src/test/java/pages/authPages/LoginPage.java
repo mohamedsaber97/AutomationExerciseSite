@@ -25,14 +25,15 @@ public class LoginPage extends ProjectBase {
 
     //method to submit valid login
     public void validLogin() {
-        loginForm();
+        checkLoginOpen();
+        validLoginForm();
         registerPage.deleteAccountCycle();
     }
 
     //method to submit invalid login
     public void invalidLogin() {
-        loginForm();
-
+        checkLoginOpen();
+        invalidLoginForm();
         //check if error login data is visible
         WebElement incorrectDataLElement = driver.findElement(incorrectDataLbl);
         boolean actualIncorrectLbl = incorrectDataLElement.isDisplayed();
@@ -40,19 +41,32 @@ public class LoginPage extends ProjectBase {
         System.out.println("----the Your email or password is incorrect! is visible-----");
     }
 
-    //method to submit valid login form
-    public void loginForm() {
-        //check that login is opened
+    //method to check that login is opened
+    public void checkLoginOpen() {
         WebElement loginLblElement = driver.findElement(loginLbl);
         boolean actualLbl = loginLblElement.isDisplayed();
         Assert.assertTrue(actualLbl, "-----the Login to your account is invisible-----");
         System.out.println("----the Login to your account is visible-----");
+    }
 
-        //send data
+    //method to send valid login data
+    public void validLoginForm() {
         WebElement emailElement = driver.findElement(emailTxt);
         emailElement.sendKeys(properties.getProperty("loginEmail"));
         WebElement passwordElement = driver.findElement(passwordTxt);
         passwordElement.sendKeys(properties.getProperty("loginPassword"));
+        WebElement loginElement = driver.findElement(loginBtn);
+        loginElement.click();
+    }
+
+    //method to send invalid login data
+    public void invalidLoginForm() {
+        String randomEmail = "test" + dateFormat + "@test.com";
+        String randomPassword = "test" + dateFormat;
+        WebElement emailElement = driver.findElement(emailTxt);
+        emailElement.sendKeys(randomEmail);
+        WebElement passwordElement = driver.findElement(passwordTxt);
+        passwordElement.sendKeys(randomPassword);
         WebElement loginElement = driver.findElement(loginBtn);
         loginElement.click();
     }

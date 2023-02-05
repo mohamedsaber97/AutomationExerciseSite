@@ -30,13 +30,13 @@ public class LoginTest extends ProjectBase {
         System.out.println("-----after each login testcase is finished-----");
     }
 
-    @Test
+    @Test(priority = 3)
     public void validLoginTC() {
         loginPage.validLogin();
         System.out.println("-----valid login testcase is finished-----");
     }
 
-    @Test
+    @Test(priority = 4)
     public void invalidLoginTC() {
         loginPage.invalidLogin();
         System.out.println("-----invalid login testcase is finished-----");

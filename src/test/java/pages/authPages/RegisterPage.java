@@ -2,13 +2,13 @@ package pages.authPages;
 
 import base.ProjectBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
+
 
 public class RegisterPage extends ProjectBase {
 
@@ -57,15 +57,17 @@ public class RegisterPage extends ProjectBase {
 
     //method to submit register with new user
     public void registerNewUser() {
-        signUpForm();
+        checkSignUpOpen();
+        validSignUpForm();
         accountInfoForm();
         verifyAndContinueCreatedAccount();
         deleteAccountCycle();
     }
 
+    //method to submit register with duplicate user
     public void registerDuplicateUser() {
-        signUpForm();
-
+        checkSignUpOpen();
+        invalidSignUpForm();
         //check if duplicate email alert is visible
         WebElement duplicateEmailElement = driver.findElement(duplicateEmailLbl);
         boolean actualDuplicateLbl = duplicateEmailElement.isDisplayed();
@@ -73,23 +75,38 @@ public class RegisterPage extends ProjectBase {
         System.out.println("----the Email Address already exist! is visible-----");
     }
 
-    //method to submit signup form
-    public void signUpForm() {
-        //check that signup is opened
+    //method to check that signup is opened
+    public void checkSignUpOpen() {
         WebElement newUserElement = driver.findElement(newUserLbl);
         boolean actualLbl = newUserElement.isDisplayed();
         Assert.assertTrue(actualLbl, "-----the New User Signup! is invisible-----");
         System.out.println("----the New User Signup! is visible-----");
+    }
 
-        //send data
+
+    //method to send valid signup data
+    public void validSignUpForm() {
+        String randomName = "test" + dateFormat;
+        String randomEmail = "test" + dateFormat + "@test.com";
         WebElement nameElement = driver.findElement(nameTxt);
-        nameElement.sendKeys(properties.getProperty("newName"));
+        nameElement.sendKeys(randomName);
         WebElement emailElement = driver.findElement(emailTxt);
-        emailElement.sendKeys(properties.getProperty("newEmail"));
+        emailElement.sendKeys(randomEmail);
         WebElement signUpElement = driver.findElement(signUbBtn);
         signUpElement.click();
     }
 
+    //method to send invalid signup data
+    public void invalidSignUpForm() {
+        WebElement nameElement = driver.findElement(nameTxt);
+        nameElement.sendKeys(properties.getProperty("registeredName"));
+        WebElement emailElement = driver.findElement(emailTxt);
+        emailElement.sendKeys(properties.getProperty("registeredEmail"));
+        WebElement signUpElement = driver.findElement(signUbBtn);
+        signUpElement.click();
+    }
+
+    //method to complete account information
     public void accountInfoForm() {
         //check that account info is opened
         WebElement enterAccountElement = driver.findElement(enterAccountLbl);
@@ -97,7 +114,7 @@ public class RegisterPage extends ProjectBase {
         Assert.assertTrue(actualLbl, "-----the ENTER ACCOUNT INFORMATION is invisible-----");
         System.out.println("----the ENTER ACCOUNT INFORMATION is visible-----");
 
-        //fill user data
+        //fill user info
         WebElement titleRadioBtnElement = driver.findElement(titleRadioBtn);
         titleRadioBtnElement.click();
         WebElement passwordElement = driver.findElement(passwordTxt);
@@ -116,11 +133,9 @@ public class RegisterPage extends ProjectBase {
 
         //choose checkboxes of newLetters and offers
         WebElement newsLetterElement = driver.findElement(newsLetterCheckbox);
-        JavascriptExecutor jse1 = (JavascriptExecutor) driver;
-        jse1.executeScript("arguments[0].click()", newsLetterElement);
+        javascriptExecutor.executeScript("arguments[0].click()", newsLetterElement);
         WebElement offersElement = driver.findElement(offersCheckbox);
-        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
-        jse2.executeScript("arguments[0].click()", offersElement);
+        javascriptExecutor.executeScript("arguments[0].click()", offersElement);
 
         //fill user address data
         WebElement firstNameElement = driver.findElement(firstNameTxt);
@@ -147,8 +162,7 @@ public class RegisterPage extends ProjectBase {
 
         //click on create account button
         WebElement createAccountElement = driver.findElement(createAccountBtn);
-        JavascriptExecutor jse3 = (JavascriptExecutor) driver;
-        jse3.executeScript("arguments[0].click()", createAccountElement);
+        javascriptExecutor.executeScript("arguments[0].click()", createAccountElement);
     }
 
     //method to verify that account is created

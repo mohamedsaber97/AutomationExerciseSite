@@ -1,35 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-03T23:11:36 EET" name="Authentication" finished-at="2023-02-03T23:15:55 EET" duration-ms="259125">
+  <suite started-at="2023-02-05T22:48:14 EET" name="Authentication" finished-at="2023-02-05T22:55:32 EET" duration-ms="437824">
     <groups>
     </groups>
-    <test started-at="2023-02-03T23:11:36 EET" name="Smoke Test" finished-at="2023-02-03T23:15:55 EET" duration-ms="259125">
+    <test started-at="2023-02-05T22:48:14 EET" name="Smoke Test" finished-at="2023-02-05T22:55:32 EET" duration-ms="437824">
       <class name="testCases.authTestCases.LoginTest">
-        <test-method is-config="true" signature="beforeEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:14:02 EET" name="beforeEachLoginTC" finished-at="2023-02-03T23:15:12 EET" duration-ms="69504" status="PASS">
+        <test-method is-config="true" signature="beforeEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:52:56 EET" name="beforeEachLoginTC" finished-at="2023-02-05T22:54:28 EET" duration-ms="91983" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachLoginTC -->
-        <test-method signature="invalidLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:15:12 EET" name="invalidLoginTC" finished-at="2023-02-03T23:15:54 EET" duration-ms="42510" status="PASS">
+        <test-method signature="validLoginTC()[pri:3, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:54:28 EET" name="validLoginTC" finished-at="2023-02-05T22:55:22 EET" duration-ms="53765" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'Logged in as')]"}
+  (Session info: MicrosoftEdge=109.0.1518.78)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [3027d1a5e7ff9870f99369f5db08f380, findElement {using=xpath, value=//a[contains(text(),'Logged in as')]}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 109.0.1518.78, ms:edgeOptions: {debuggerAddress: localhost:53384}, msedge: {msedgedriverVersion: 109.0.1518.78 (4e4b32c38163..., userDataDir: C:\Users\msabe\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53384/devtoo..., se:cdpVersion: 109.0.1518.78, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3027d1a5e7ff9870f99369f5db08f380]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'Logged in as')]"}
+  (Session info: MicrosoftEdge=109.0.1518.78)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [3027d1a5e7ff9870f99369f5db08f380, findElement {using=xpath, value=//a[contains(text(),'Logged in as')]}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 109.0.1518.78, ms:edgeOptions: {debuggerAddress: localhost:53384}, msedge: {msedgedriverVersion: 109.0.1518.78 (4e4b32c38163..., userDataDir: C:\Users\msabe\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53384/devtoo..., se:cdpVersion: 109.0.1518.78, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3027d1a5e7ff9870f99369f5db08f380
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at pages.authPages.RegisterPage.deleteAccountCycle(RegisterPage.java:182)
+at pages.authPages.LoginPage.validLogin(LoginPage.java:30)
+at testCases.authTestCases.LoginTest.validLoginTC(LoginTest.java:35)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTC -->
+        <test-method is-config="true" signature="afterEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:55:22 EET" name="afterEachLoginTC" finished-at="2023-02-05T22:55:22 EET" duration-ms="269" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachLoginTC -->
+        <test-method is-config="true" signature="beforeEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:55:22 EET" name="beforeEachLoginTC" finished-at="2023-02-05T22:55:30 EET" duration-ms="8321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachLoginTC -->
+        <test-method signature="invalidLoginTC()[pri:4, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:55:30 EET" name="invalidLoginTC" finished-at="2023-02-05T22:55:32 EET" duration-ms="1588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTC -->
-        <test-method is-config="true" signature="afterEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@4efc180e]" started-at="2023-02-03T23:15:54 EET" name="afterEachLoginTC" finished-at="2023-02-03T23:15:55 EET" duration-ms="252" status="PASS">
+        <test-method is-config="true" signature="afterEachLoginTC()[pri:0, instance:testCases.authTestCases.LoginTest@3d6f0054]" started-at="2023-02-05T22:55:32 EET" name="afterEachLoginTC" finished-at="2023-02-05T22:55:32 EET" duration-ms="247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachLoginTC -->
       </class> <!-- testCases.authTestCases.LoginTest -->
       <class name="testCases.authTestCases.RegisterTest">
-        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:11:36 EET" name="beforeEachRegisterTC" finished-at="2023-02-03T23:13:08 EET" duration-ms="92018" status="PASS">
+        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:48:14 EET" name="beforeEachRegisterTC" finished-at="2023-02-05T22:49:26 EET" duration-ms="71482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEachRegisterTC -->
-        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:13:08 EET" name="registerNewUserTC" finished-at="2023-02-03T23:14:02 EET" duration-ms="54461" status="PASS">
+        <test-method signature="registerNewUserTC()[pri:1, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:49:26 EET" name="registerNewUserTC" finished-at="2023-02-05T22:52:44 EET" duration-ms="198359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerNewUserTC -->
-        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@b62d79]" started-at="2023-02-03T23:14:02 EET" name="afterEachRegisterTC" finished-at="2023-02-03T23:14:02 EET" duration-ms="337" status="PASS">
+        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:52:44 EET" name="afterEachRegisterTC" finished-at="2023-02-05T22:52:45 EET" duration-ms="357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterEachRegisterTC -->
+        <test-method is-config="true" signature="beforeEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:52:45 EET" name="beforeEachRegisterTC" finished-at="2023-02-05T22:52:53 EET" duration-ms="8421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeEachRegisterTC -->
+        <test-method signature="registerDuplicateUserTC()[pri:2, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:52:53 EET" name="registerDuplicateUserTC" finished-at="2023-02-05T22:52:55 EET" duration-ms="2369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerDuplicateUserTC -->
+        <test-method is-config="true" signature="afterEachRegisterTC()[pri:0, instance:testCases.authTestCases.RegisterTest@cad498c]" started-at="2023-02-05T22:52:55 EET" name="afterEachRegisterTC" finished-at="2023-02-05T22:52:56 EET" duration-ms="616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterEachRegisterTC -->
