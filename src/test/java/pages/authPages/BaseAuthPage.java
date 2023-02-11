@@ -4,12 +4,15 @@ import base.ProjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
 public class BaseAuthPage extends ProjectBase {
     public BaseAuthPage() throws IOException {
     }
+
+    public static SoftAssert softAssert = new SoftAssert();
 
     //main elements
     By homeLogoImg = By.xpath("//*[@alt = 'Website for automation practice']");

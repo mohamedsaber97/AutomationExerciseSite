@@ -5,9 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
+
+import static pages.authPages.BaseAuthPage.softAssert;
 
 
 public class RegisterPage extends ProjectBase {
@@ -178,7 +179,6 @@ public class RegisterPage extends ProjectBase {
     //method to submit delete account cycle
     public void deleteAccountCycle() {
         //check if that user is already registered
-        SoftAssert softAssert = new SoftAssert();
         WebElement loggedInElement = driver.findElement(loggedInLbl);
         boolean actualLoggedLbl = loggedInElement.isDisplayed();
         softAssert.assertTrue(actualLoggedLbl, "-----the Logged in as username is invisible-----");
