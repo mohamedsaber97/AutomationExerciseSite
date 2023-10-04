@@ -3,13 +3,13 @@
 <suite name="Authentication" verbose="1">
     <test name="Smoke Test">
         <classes>
-            <class name="testCases.authTestCases.RegisterTest">
+            <class name="steps.authTest.RegisterTest">
                 <methods>
                     <include name="registerNewUserTC"/>
                     <include name="registerDuplicateUserTC"/>
                 </methods>
             </class>
-            <class name="testCases.authTestCases.LoginTest">
+            <class name="steps.authTest.LoginTest">
                 <methods>
                     <include name="validLoginTC"/>
                     <include name="invalidLoginTC"/>

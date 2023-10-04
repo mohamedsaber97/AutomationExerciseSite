@@ -3,13 +3,13 @@
 <suite name="Failed suite [Authentication]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Smoke Test(failed)">
     <classes>
-      <class name="testCases.authTestCases.LoginTest">
+      <class name="steps.authTest.LoginTest">
         <methods>
-          <include name="validLoginTC"/>
           <include name="afterEachLoginTC"/>
           <include name="beforeEachLoginTC"/>
+          <include name="validLoginTC"/>
         </methods>
-      </class> <!-- testCases.authTestCases.LoginTest -->
+      </class> <!-- steps.authTest.LoginTest -->
     </classes>
   </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [Authentication] -->

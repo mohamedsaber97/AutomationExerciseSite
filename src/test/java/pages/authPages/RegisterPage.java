@@ -1,6 +1,6 @@
 package pages.authPages;
 
-import base.ProjectBase;
+import base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -8,10 +8,10 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-import static pages.authPages.BaseAuthPage.softAssert;
+import static general.GeneralTest.softAssert;
 
 
-public class RegisterPage extends ProjectBase {
+public class RegisterPage extends TestBase {
 
     public RegisterPage() throws IOException {
     }
@@ -71,16 +71,16 @@ public class RegisterPage extends ProjectBase {
         invalidSignUpForm();
         //check if duplicate email alert is visible
         WebElement duplicateEmailElement = driver.findElement(duplicateEmailLbl);
-        boolean actualDuplicateLbl = duplicateEmailElement.isDisplayed();
-        Assert.assertTrue(actualDuplicateLbl, "-----the Email Address already exist! is invisible-----");
+        actualBool = duplicateEmailElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the Email Address already exist! is invisible-----");
         System.out.println("----the Email Address already exist! is visible-----");
     }
 
     //method to check that signup is opened
     public void checkSignUpOpen() {
         WebElement newUserElement = driver.findElement(newUserLbl);
-        boolean actualLbl = newUserElement.isDisplayed();
-        Assert.assertTrue(actualLbl, "-----the New User Signup! is invisible-----");
+        actualBool = newUserElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the New User Signup! is invisible-----");
         System.out.println("----the New User Signup! is visible-----");
     }
 
@@ -111,8 +111,8 @@ public class RegisterPage extends ProjectBase {
     public void accountInfoForm() {
         //check that account info is opened
         WebElement enterAccountElement = driver.findElement(enterAccountLbl);
-        boolean actualLbl = enterAccountElement.isDisplayed();
-        Assert.assertTrue(actualLbl, "-----the ENTER ACCOUNT INFORMATION is invisible-----");
+        actualBool = enterAccountElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the ENTER ACCOUNT INFORMATION is invisible-----");
         System.out.println("----the ENTER ACCOUNT INFORMATION is visible-----");
 
         //fill user info
@@ -169,8 +169,8 @@ public class RegisterPage extends ProjectBase {
     //method to verify that account is created
     public void verifyAndContinueCreatedAccount() {
         WebElement accountCreatedElement = driver.findElement(accountCreatedLbl);
-        boolean actualLbl = accountCreatedElement.isDisplayed();
-        Assert.assertTrue(actualLbl, "-----the ACCOUNT CREATED! is invisible-----");
+        actualBool = accountCreatedElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the ACCOUNT CREATED! is invisible-----");
         System.out.println("----the ACCOUNT CREATED! is visible-----");
         WebElement continueCreatedElement = driver.findElement(continueCreatedBtn);
         continueCreatedElement.click();
@@ -180,8 +180,8 @@ public class RegisterPage extends ProjectBase {
     public void deleteAccountCycle() {
         //check if that user is already registered
         WebElement loggedInElement = driver.findElement(loggedInLbl);
-        boolean actualLoggedLbl = loggedInElement.isDisplayed();
-        softAssert.assertTrue(actualLoggedLbl, "-----the Logged in as username is invisible-----");
+        actualBool = loggedInElement.isDisplayed();
+        softAssert.assertTrue(actualBool, "-----the Logged in as username is invisible-----");
         System.out.println("----the Logged in as username is visible-----");
 
         //click on delete account button
@@ -190,8 +190,8 @@ public class RegisterPage extends ProjectBase {
 
         //check if that user is deleted
         WebElement accountDeletedElement = driver.findElement(accountDeletedLbl);
-        boolean actualDeletedLbl = accountDeletedElement.isDisplayed();
-        softAssert.assertTrue(actualDeletedLbl, "-----the ACCOUNT DELETED! is invisible-----");
+        actualBool = accountDeletedElement.isDisplayed();
+        softAssert.assertTrue(actualBool, "-----the ACCOUNT DELETED! is invisible-----");
         System.out.println("----the ACCOUNT DELETED! is visible-----");
 
         //click on continue and finish delete cycle

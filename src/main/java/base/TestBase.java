@@ -15,19 +15,23 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
-public class ProjectBase {
+public class TestBase {
 
     //global project variables
     public static WebDriver driver;
-    public static Actions actions;
     public static Properties properties;
+    public static Actions actions;
     public static JavascriptExecutor javascriptExecutor;
     public static String dateFormat;
+    public static String expectedText = "";
+    public static String actualText = "";
+    public static Boolean expectedBool = false;
+    public static Boolean actualBool = false;
 
     //read project config file
-    public ProjectBase() throws IOException {
+    public TestBase() throws IOException {
         properties = new Properties();
-        FileInputStream configFile = new FileInputStream("src/main/java/base/ProjectConfig");
+        FileInputStream configFile = new FileInputStream("src/main/java/base/TestConfig");
         properties.load(configFile);
     }
 

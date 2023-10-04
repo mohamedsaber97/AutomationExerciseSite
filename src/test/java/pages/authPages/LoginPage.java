@@ -1,13 +1,13 @@
 package pages.authPages;
 
-import base.ProjectBase;
+import base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.io.IOException;
 
-public class LoginPage extends ProjectBase {
+public class LoginPage extends TestBase {
     public LoginPage() throws IOException {
     }
 
@@ -36,16 +36,16 @@ public class LoginPage extends ProjectBase {
         invalidLoginForm();
         //check if error login data is visible
         WebElement incorrectDataLElement = driver.findElement(incorrectDataLbl);
-        boolean actualIncorrectLbl = incorrectDataLElement.isDisplayed();
-        Assert.assertTrue(actualIncorrectLbl, "-----the Your email or password is incorrect! is invisible-----");
+        actualBool = incorrectDataLElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the Your email or password is incorrect! is invisible-----");
         System.out.println("----the Your email or password is incorrect! is visible-----");
     }
 
     //method to check that login is opened
     public void checkLoginOpen() {
         WebElement loginLblElement = driver.findElement(loginLbl);
-        boolean actualLbl = loginLblElement.isDisplayed();
-        Assert.assertTrue(actualLbl, "-----the Login to your account is invisible-----");
+        actualBool = loginLblElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the Login to your account is invisible-----");
         System.out.println("----the Login to your account is visible-----");
     }
 

@@ -1,20 +1,20 @@
-package testCases.authTestCases;
+package steps.authTest;
 
-import base.ProjectBase;
+import base.TestBase;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.authPages.BaseAuthPage;
+import general.GeneralTest;
 import pages.authPages.RegisterPage;
 
 import java.io.IOException;
 
-public class RegisterTest extends ProjectBase {
+public class RegisterTest extends TestBase {
 
     public RegisterTest() throws IOException {
     }
 
-    BaseAuthPage baseAuthPage = new BaseAuthPage();
+    GeneralTest baseAuthPage = new GeneralTest();
     RegisterPage registerPage = new RegisterPage();
 
     @BeforeMethod

@@ -1,6 +1,6 @@
-package pages.authPages;
+package general;
 
-import base.ProjectBase;
+import base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -8,8 +8,8 @@ import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 
-public class BaseAuthPage extends ProjectBase {
-    public BaseAuthPage() throws IOException {
+public class GeneralTest extends TestBase {
+    public GeneralTest() throws IOException {
     }
 
     public static SoftAssert softAssert = new SoftAssert();
@@ -18,12 +18,11 @@ public class BaseAuthPage extends ProjectBase {
     By homeLogoImg = By.xpath("//*[@alt = 'Website for automation practice']");
     By singUpLoginBtn = By.xpath("//*[@href = '/login']");
 
-
     //method to check if that home is opened
     public void checkHomeLogo() {
         WebElement homeLogoElement = driver.findElement(homeLogoImg);
-        boolean actualLogo = homeLogoElement.isDisplayed();
-        Assert.assertTrue(actualLogo, "-----the home logo is invisible-----");
+        actualBool = homeLogoElement.isDisplayed();
+        Assert.assertTrue(actualBool, "-----the home logo is invisible-----");
         System.out.println("----the home logo is visible-----");
     }
 

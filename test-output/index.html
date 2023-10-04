@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Authentication" class="navigator-link">
-              <span class="suite-name border-passed">Authentication</span>
+              <span class="suite-name border-failed">Authentication</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Authentication" class="hide-methods failed suite-Authentication"> (hide)</a> <!-- hide-methods failed suite-Authentication -->
+                      <a href="#" panel-name="suite-Authentication" class="show-methods failed suite-Authentication"> (show)</a> <!-- show-methods failed suite-Authentication -->
+                    </span>
+                    <div class="method-list-content failed suite-Authentication">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Authentication" title="steps.authTest.LoginTest" class="method navigator-link" hash-for-method="validLoginTC">validLoginTC</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Authentication -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +117,17 @@
                     <div class="method-list-content passed suite-Authentication">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Authentication" title="testCases.authTestCases.RegisterTest" class="method navigator-link" hash-for-method="registerNewUserTC">registerNewUserTC</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Authentication" title="steps.authTest.LoginTest" class="method navigator-link" hash-for-method="invalidLoginTC">invalidLoginTC</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Authentication" title="steps.authTest.RegisterTest" class="method navigator-link" hash-for-method="registerDuplicateUserTC">registerDuplicateUserTC</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Authentication" title="steps.authTest.RegisterTest" class="method navigator-link" hash-for-method="registerNewUserTC">registerNewUserTC</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Authentication -->
@@ -118,12 +142,77 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Authentication" class="panel Authentication">
+          <div class="suite-Authentication-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">steps.authTest.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validLoginTC">
+                  </a> <!-- validLoginTC -->
+                  <span class="method-name">validLoginTC</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logged in as&apos;)]&quot;}
+  (Session info: MicrosoftEdge=117.0.2045.47)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [b6fbe13131002367175e99bf742cc812, findElement {using=xpath, value=//a[contains(text(),&apos;Logged in as&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.47, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59943}, msedge: {msedgedriverVersion: 117.0.2045.47 (b75fe6866687..., userDataDir: C:\Users\msabe\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59943/devtoo..., se:cdpVersion: 117.0.2045.47, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b6fbe13131002367175e99bf742cc812
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at pages.authPages.RegisterPage.deleteAccountCycle(RegisterPage.java:182)
+	at pages.authPages.LoginPage.validLogin(LoginPage.java:30)
+	at steps.authTest.LoginTest.validLoginTC(LoginTest.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Authentication-class-failed -->
           <div class="suite-Authentication-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCases.authTestCases.RegisterTest</span>
+              <span class="class-name">steps.authTest.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidLoginTC">
+                  </a> <!-- invalidLoginTC -->
+                  <span class="method-name">invalidLoginTC</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Authentication-class-passed -->
+          <div class="suite-Authentication-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">steps.authTest.RegisterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="registerDuplicateUserTC">
+                  </a> <!-- registerDuplicateUserTC -->
+                  <span class="method-name">registerDuplicateUserTC</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="registerNewUserTC">
@@ -145,12 +234,18 @@
 &lt;suite name=&quot;Authentication&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Smoke Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.authTestCases.RegisterTest&quot;&gt;
+      &lt;class name=&quot;steps.authTest.RegisterTest&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;registerNewUserTC&quot;/&gt;
-          &lt;exclude name=&quot;registerDuplicateUserTC&quot;/&gt;
+          &lt;include name=&quot;registerDuplicateUserTC&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCases.authTestCases.RegisterTest --&gt;
+      &lt;/class&gt; &lt;!-- steps.authTest.RegisterTest --&gt;
+      &lt;class name=&quot;steps.authTest.LoginTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;validLoginTC&quot;/&gt;
+          &lt;include name=&quot;invalidLoginTC&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- steps.authTest.LoginTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Test --&gt;
 &lt;/suite&gt; &lt;!-- Authentication --&gt;
@@ -164,7 +259,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Smoke Test (1 class)</span>
+                <span class="test-name">Smoke Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -190,16 +285,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'registerNewUserTC')
-data.setCell(0, 2, 'testCases.authTestCases.RegisterTest')
-data.setCell(0, 3, 21031);
+data.setCell(0, 2, 'steps.authTest.RegisterTest')
+data.setCell(0, 3, 19622);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validLoginTC')
+data.setCell(1, 2, 'steps.authTest.LoginTest')
+data.setCell(1, 3, 11652);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'registerDuplicateUserTC')
+data.setCell(2, 2, 'steps.authTest.RegisterTest')
+data.setCell(2, 3, 3951);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'invalidLoginTC')
+data.setCell(3, 2, 'steps.authTest.LoginTest')
+data.setCell(3, 3, 1900);
 window.suiteTableData['Authentication']= { tableData: data, tableDiv: 'times-div-Authentication'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-Authentication">
               </div> <!-- times-div-Authentication -->
             </div> <!-- times-div -->
@@ -214,16 +321,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Authentication" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testCases.authTestCases.RegisterTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">registerDuplicateUserTC</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Authentication" class="panel">
@@ -232,18 +332,59 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.authTestCases.RegisterTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">steps.authTest.RegisterTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">beforeEachRegisterTC</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">registerNewUserTC</span>
-                <span class="method-start">20658 ms</span>
+                <span class="method-start">15869 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterEachRegisterTC</span>
-                <span class="method-start">41691 ms</span>
+                <span class="method-start">35493 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeEachRegisterTC</span>
+                <span class="method-start">35804 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">registerDuplicateUserTC</span>
+                <span class="method-start">44730 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterEachRegisterTC</span>
+                <span class="method-start">48681 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">steps.authTest.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeEachLoginTC</span>
+                <span class="method-start">48899 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validLoginTC</span>
+                <span class="method-start">55777 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterEachLoginTC</span>
+                <span class="method-start">67432 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeEachLoginTC</span>
+                <span class="method-start">67693 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidLoginTC</span>
+                <span class="method-start">75852 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterEachLoginTC</span>
+                <span class="method-start">77753 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
