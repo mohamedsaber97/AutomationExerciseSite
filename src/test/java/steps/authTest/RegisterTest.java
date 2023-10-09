@@ -1,10 +1,9 @@
 package steps.authTest;
 
 import base.TestBase;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import general.GeneralTest;
+import pages.authPages.GeneralAuthPage;
 import pages.authPages.RegisterPage;
 
 import java.io.IOException;
@@ -14,21 +13,13 @@ public class RegisterTest extends TestBase {
     public RegisterTest() throws IOException {
     }
 
-    GeneralTest baseAuthPage = new GeneralTest();
+    GeneralAuthPage generalAuthPage = new GeneralAuthPage();
     RegisterPage registerPage = new RegisterPage();
 
     @BeforeMethod
     public void beforeEachRegisterTC() {
-        initialization(properties.getProperty("browser"));
-        baseAuthPage.checkHomeLogo();
-        baseAuthPage.openRegisterPage();
+        generalAuthPage.openRegisterOrLoginPage();
         System.out.println("-----before each register testcase is finished-----");
-    }
-
-    @AfterMethod
-    public void afterEachRegisterTC() {
-        driver.quit();
-        System.out.println("-----after each register testcase is finished-----");
     }
 
     @Test(priority = 1)

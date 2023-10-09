@@ -3,6 +3,7 @@
 <suite name="Authentication" verbose="1">
     <test name="Smoke Test">
         <classes>
+            <class name="utils.GeneralTest"/>
             <class name="steps.authTest.RegisterTest">
                 <methods>
                     <include name="registerNewUserTC"/>

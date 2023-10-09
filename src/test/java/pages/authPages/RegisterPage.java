@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
-import static general.GeneralTest.softAssert;
+import static utils.GeneralPage.softAssert;
 
 
 public class RegisterPage extends TestBase {
