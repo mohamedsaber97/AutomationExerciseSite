@@ -73,7 +73,7 @@ public class RegisterPage extends TestBase {
         WebElement duplicateEmailElement = driver.findElement(duplicateEmailLbl);
         actualBool = duplicateEmailElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the Email Address already exist! is invisible-----");
-        System.out.println("----the Email Address already exist! is visible-----");
+        System.out.println("-----the Email Address already exist! is visible-----");
     }
 
     //method to check that signup is opened
@@ -81,7 +81,7 @@ public class RegisterPage extends TestBase {
         WebElement newUserElement = driver.findElement(newUserLbl);
         actualBool = newUserElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the New User Signup! is invisible-----");
-        System.out.println("----the New User Signup! is visible-----");
+        System.out.println("-----the New User Signup! is visible-----");
     }
 
 
@@ -113,7 +113,7 @@ public class RegisterPage extends TestBase {
         WebElement enterAccountElement = driver.findElement(enterAccountLbl);
         actualBool = enterAccountElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the ENTER ACCOUNT INFORMATION is invisible-----");
-        System.out.println("----the ENTER ACCOUNT INFORMATION is visible-----");
+        System.out.println("-----the ENTER ACCOUNT INFORMATION is visible-----");
 
         //fill user info
         WebElement titleRadioBtnElement = driver.findElement(titleRadioBtn);
@@ -171,7 +171,7 @@ public class RegisterPage extends TestBase {
         WebElement accountCreatedElement = driver.findElement(accountCreatedLbl);
         actualBool = accountCreatedElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the ACCOUNT CREATED! is invisible-----");
-        System.out.println("----the ACCOUNT CREATED! is visible-----");
+        System.out.println("-----the ACCOUNT CREATED! is visible-----");
         WebElement continueCreatedElement = driver.findElement(continueCreatedBtn);
         continueCreatedElement.click();
     }
@@ -182,7 +182,7 @@ public class RegisterPage extends TestBase {
         WebElement loggedInElement = driver.findElement(loggedInLbl);
         actualBool = loggedInElement.isDisplayed();
         softAssert.assertTrue(actualBool, "-----the Logged in as username is invisible-----");
-        System.out.println("----the Logged in as username is visible-----");
+        System.out.println("-----the Logged in as username is visible-----");
 
         //click on delete account button
         WebElement deleteElement = driver.findElement(deleteBtn);
@@ -192,7 +192,7 @@ public class RegisterPage extends TestBase {
         WebElement accountDeletedElement = driver.findElement(accountDeletedLbl);
         actualBool = accountDeletedElement.isDisplayed();
         softAssert.assertTrue(actualBool, "-----the ACCOUNT DELETED! is invisible-----");
-        System.out.println("----the ACCOUNT DELETED! is visible-----");
+        System.out.println("-----the ACCOUNT DELETED! is visible-----");
 
         //click on continue and finish delete cycle
         WebElement continueDeletedElement = driver.findElement(continueDeletedBtn);

@@ -23,7 +23,7 @@ public class GeneralPage extends TestBase {
         WebElement homeLogoElement = driver.findElement(homeLogoImg);
         actualBool = homeLogoElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the home logo is invisible-----");
-        System.out.println("----the home logo is visible-----");
+        System.out.println("-----the home logo is visible-----");
     }
 
 }

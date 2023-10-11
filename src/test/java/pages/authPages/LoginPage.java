@@ -38,7 +38,7 @@ public class LoginPage extends TestBase {
         WebElement incorrectDataLElement = driver.findElement(incorrectDataLbl);
         actualBool = incorrectDataLElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the Your email or password is incorrect! is invisible-----");
-        System.out.println("----the Your email or password is incorrect! is visible-----");
+        System.out.println("-----the Your email or password is incorrect! is visible-----");
     }
 
     //method to check that login is opened
@@ -46,7 +46,7 @@ public class LoginPage extends TestBase {
         WebElement loginLblElement = driver.findElement(loginLbl);
         actualBool = loginLblElement.isDisplayed();
         Assert.assertTrue(actualBool, "-----the Login to your account is invisible-----");
-        System.out.println("----the Login to your account is visible-----");
+        System.out.println("-----the Login to your account is visible-----");
     }
 
     //method to send valid login data

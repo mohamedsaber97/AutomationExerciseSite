@@ -47,7 +47,7 @@ public class TestBase {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else {
-            throw new Error("------browser not supported------");
+            throw new Error("-----browser not supported-----");
         }
 
         actions = new Actions(driver);
