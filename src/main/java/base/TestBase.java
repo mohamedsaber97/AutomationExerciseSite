@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,8 +26,9 @@ public class TestBase {
     public static String dateFormat;
     public static String expectedText = "";
     public static String actualText = "";
-    public static Boolean expectedBool = false;
     public static Boolean actualBool = false;
+
+    public static WebDriverWait wait;
 
     //read project config file
     public TestBase() throws IOException {
@@ -53,6 +55,7 @@ public class TestBase {
         actions = new Actions(driver);
         javascriptExecutor = (JavascriptExecutor) driver;
         dateFormat = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(properties.getProperty("url"));

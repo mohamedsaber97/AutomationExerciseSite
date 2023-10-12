@@ -1,8 +1,7 @@
 package steps.authTest;
 
 import base.TestBase;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.authPages.GeneralAuthPage;
 import pages.authPages.RegisterPage;
 
@@ -13,22 +12,22 @@ public class RegisterTest extends TestBase {
     public RegisterTest() throws IOException {
     }
 
-    GeneralAuthPage generalAuthPage = new GeneralAuthPage();
     RegisterPage registerPage = new RegisterPage();
+    GeneralAuthPage generalAuthPage = new GeneralAuthPage();
 
-    @BeforeMethod
-    public void beforeEachRegisterTC() {
+    @BeforeMethod(groups = "auth")
+    public void beforeAllAuthTC() {
         generalAuthPage.openRegisterOrLoginPage();
-        System.out.println("-----before each register testcase is finished-----");
+        System.out.println("-----before each auth testcase is finished-----");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "auth")
     public void registerNewUserTC() {
         registerPage.registerNewUser();
         System.out.println("-----register new user testcase is finished-----");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, groups = "auth")
     public void registerDuplicateUserTC() {
         registerPage.registerDuplicateUser();
         System.out.println("-----register duplicate user testcase is finished-----");

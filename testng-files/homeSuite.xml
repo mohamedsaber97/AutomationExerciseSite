@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="HomeSuite" verbose="1">
+    <groups>
+        <run>
+            <include name="home"/>
+        </run>
+    </groups>
+    <test name="Integration Test">
+        <classes>
+            <class name="utils.GeneralTest"/>
+            <class name="steps.homeTest.ContactUsTest"/>
+        </classes>
+    </test>
+</suite>

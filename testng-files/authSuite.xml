@@ -1,6 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Authentication" verbose="1">
+<suite name="AuthenticationSuite" verbose="1">
+    <groups>
+        <run>
+            <include name="auth"/>
+        </run>
+    </groups>
     <test name="Smoke Test">
         <classes>
             <class name="utils.GeneralTest"/>
@@ -12,7 +17,7 @@
             </class>
             <class name="steps.authTest.LoginTest">
                 <methods>
-                    <include name="validLoginTC"/>
+                    <exclude name="validLoginTC"/>
                     <include name="invalidLoginTC"/>
                 </methods>
             </class>

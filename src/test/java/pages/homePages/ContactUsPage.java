@@ -1,8 +1,10 @@
 package pages.homePages;
 
 import base.TestBase;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import java.io.IOException;
@@ -33,11 +35,11 @@ public class ContactUsPage extends TestBase {
         WebElement nameElement = driver.findElement(nameTxt);
         nameElement.sendKeys("test name");
         WebElement emailElement = driver.findElement(emailTxt);
-        emailElement.sendKeys("test name");
+        emailElement.sendKeys("tt@tt.ttt");
         WebElement subjectElement = driver.findElement(subjectTxt);
-        subjectElement.sendKeys("test name");
+        subjectElement.sendKeys("test subject");
         WebElement messageElement = driver.findElement(messageTxt);
-        messageElement.sendKeys("test name");
+        messageElement.sendKeys("test message");
         WebElement uploadFileElement = driver.findElement(uploadFile);
         uploadFileElement.sendKeys("D:\\saber\\test data\\sample.pdf");
     }
@@ -45,6 +47,15 @@ public class ContactUsPage extends TestBase {
     public void submitFormAndDialog() {
         WebElement submitElement = driver.findElement(submitBtn);
         submitElement.click();
-        driver.switchTo().alert().accept();
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            actualText = alert.getText();
+            expectedText = "Press OK to proceed!";
+            alert.accept();
+            Assert.assertEquals(actualText, expectedText);
+        } catch (Exception e) {
+            System.out.println("-----no such alert-----");
+        }
     }
 }

@@ -12,14 +12,14 @@ public class GeneralTest extends TestBase {
 
     GeneralPage generalPage= new GeneralPage();
 
-    @BeforeTest
+    @BeforeTest (groups = {"auth" , "home"})
     public void beforeAll(){
         initialization(properties.getProperty("browser"));
         generalPage.checkHomeLogo();
         System.out.println("-----before each testcase is finished-----");
     }
 
-    @AfterTest
+    @AfterTest (groups = {"auth" , "home"})
     public void afterAll(){
         driver.quit();
         System.out.println("-----after each testcase is finished-----");

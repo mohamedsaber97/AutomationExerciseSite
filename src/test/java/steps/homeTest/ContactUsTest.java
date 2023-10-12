@@ -12,13 +12,13 @@ public class ContactUsTest extends TestBase {
 
     ContactUsPage contactUsPage = new ContactUsPage();
 
-    @Test
+    @Test(priority = 5, groups = "home")
     public void openAndVerifyContactUsTitleTC() {
         contactUsPage.openAndVerifyContactUsTitle();
         System.out.println("-----open and verify contactUs Title testcase is finished-----");
     }
 
-    @Test
+    @Test(priority = 6, groups = "home")
     public void submitFormAndDialogTC() {
         contactUsPage.fillContactUsData();
         contactUsPage.submitFormAndDialog();
