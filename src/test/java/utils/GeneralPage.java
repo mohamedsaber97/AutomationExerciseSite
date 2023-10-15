@@ -13,12 +13,8 @@ public class GeneralPage extends TestBase {
     }
 
     public static SoftAssert softAssert = new SoftAssert();
+    private final By homeLogoImg = By.xpath("//*[@alt = 'Website for automation practice']");
 
-    //main elements
-    By homeLogoImg = By.xpath("//*[@alt = 'Website for automation practice']");
-
-
-    //method to check if that home is opened
     public void checkHomeLogo() {
         WebElement homeLogoElement = driver.findElement(homeLogoImg);
         actualBool = homeLogoElement.isDisplayed();

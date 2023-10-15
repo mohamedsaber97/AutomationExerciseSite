@@ -17,8 +17,6 @@ import java.util.Date;
 import java.util.Properties;
 
 public class TestBase {
-
-    //global project variables
     public static WebDriver driver;
     public static Properties properties;
     public static Actions actions;
@@ -30,14 +28,12 @@ public class TestBase {
 
     public static WebDriverWait wait;
 
-    //read project config file
     public TestBase() throws IOException {
         properties = new Properties();
         FileInputStream configFile = new FileInputStream("src/main/java/base/TestConfig");
         properties.load(configFile);
     }
 
-    //initialize all global project variables and open browser with project url
     public static void initialization(String browser) {
         if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();

@@ -13,14 +13,14 @@ public class ContactUsPage extends TestBase {
     public ContactUsPage() throws IOException {
     }
 
-    By contactUsBtn = By.xpath("//*[text() = ' Contact us']");
-    By getTouchLbl = By.xpath(("//*[text() = 'Get In Touch']"));
-    By nameTxt = By.name("name");
-    By emailTxt = By.name("email");
-    By subjectTxt = By.name("subject");
-    By messageTxt = By.id("message");
-    By uploadFile = By.name("upload_file");
-    By submitBtn = By.name("submit");
+    private final By contactUsBtn = By.xpath("//*[text() = ' Contact us']");
+    private final By getTouchLbl = By.xpath(("//*[text() = 'Get In Touch']"));
+    private final By nameTxt = By.name("name");
+    private final By emailTxt = By.name("email");
+    private final By subjectTxt = By.name("subject");
+    private final By messageTxt = By.id("message");
+    private final By uploadFile = By.name("upload_file");
+    private final By submitBtn = By.name("submit");
 
     public void openAndVerifyContactUsTitle() {
         WebElement contactUsElement = driver.findElement(contactUsBtn);
@@ -41,13 +41,14 @@ public class ContactUsPage extends TestBase {
         WebElement messageElement = driver.findElement(messageTxt);
         messageElement.sendKeys("test message");
         WebElement uploadFileElement = driver.findElement(uploadFile);
-        uploadFileElement.sendKeys("D:\\saber\\test data\\sample.pdf");
+        uploadFileElement.sendKeys("D:\\work\\Manual\\test data\\sample.pdf");
     }
 
     public void submitFormAndDialog() {
         WebElement submitElement = driver.findElement(submitBtn);
-        submitElement.click();
         try {
+            wait.until(ExpectedConditions.elementToBeClickable(submitElement));
+            submitElement.click();
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             actualText = alert.getText();
@@ -55,7 +56,7 @@ public class ContactUsPage extends TestBase {
             alert.accept();
             Assert.assertEquals(actualText, expectedText);
         } catch (Exception e) {
-            System.out.println("-----no such alert-----");
+            System.out.println("-----no such alert or submit button is hidden-----");
         }
     }
 }

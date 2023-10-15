@@ -10,17 +10,17 @@ public class GeneralTest extends TestBase {
     public GeneralTest() throws IOException {
     }
 
-    GeneralPage generalPage= new GeneralPage();
+    GeneralPage generalPage = new GeneralPage();
 
-    @BeforeTest (groups = {"auth" , "home"})
-    public void beforeAll(){
+    @BeforeTest(groups = {"auth", "home"})
+    public void beforeAll() {
         initialization(properties.getProperty("browser"));
         generalPage.checkHomeLogo();
         System.out.println("-----before each testcase is finished-----");
     }
 
-    @AfterTest (groups = {"auth" , "home"})
-    public void afterAll(){
+    @AfterTest(groups = {"auth", "home"})
+    public void afterAll() {
         driver.quit();
         System.out.println("-----after each testcase is finished-----");
     }

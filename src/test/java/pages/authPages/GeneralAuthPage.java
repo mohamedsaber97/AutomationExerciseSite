@@ -9,10 +9,10 @@ import java.io.IOException;
 public class GeneralAuthPage extends TestBase {
     public GeneralAuthPage() throws IOException {
     }
-    By singUpLoginBtn = By.xpath("//*[@href = '/login']");
+
+    private final By singUpLoginBtn = By.xpath("//*[@href = '/login']");
 
     public void openRegisterOrLoginPage() {
-        //click on signup/login button
         WebElement singUpLoginBtnElement = driver.findElement(singUpLoginBtn);
         singUpLoginBtnElement.click();
     }
